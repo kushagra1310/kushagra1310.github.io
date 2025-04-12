@@ -34,7 +34,7 @@ function analyzeText() {
     
     // Check if text has enough words
     const wordCount = countWords(textInput);
-    if (wordCount < 10000) {
+    if (wordCount <= 10000) {
         alert(`Please enter at least 10000 words. Current count: ${wordCount}`);
         return;
     }
@@ -284,3 +284,44 @@ function analyzeArticles(text) {
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+// Add at the bottom of the file
+document.addEventListener("DOMContentLoaded", function() {
+    // Animation observer for text analyzer elements
+    const analyzerElements = [
+        document.querySelector('.analyzer-container'),
+        document.querySelector('.analyzer-header'),
+        document.querySelector('.analyzer-input-container'),
+        document.querySelector('.results-container')
+    ];
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { 
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    analyzerElements.forEach(element => {
+        if (element) observer.observe(element);
+    });
+
+    // Animate results when they appear
+    const resultsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                resultsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    // Observe dynamic results
+    document.querySelectorAll('.stats-section').forEach(section => {
+        resultsObserver.observe(section);
+    });
+});

@@ -107,27 +107,3 @@
     z-index: 1;
   }
   
-  @media (max-width: 768px) {
-    .timeline::before {
-      left: 2rem;
-    }
-    
-    .timeline-item,
-    .timeline-item.reverse {
-      flex-direction: column;
-      margin-bottom: 3rem;
-    }
-    
-    .timeline-content,
-    .timeline-img {
-      width: 100%;
-    }
-    
-    .timeline-content {
-      margin-bottom: 1.5rem;
-    }
-    
-    .timeline-item::after {
-      left: 2rem;
-    }
-  }

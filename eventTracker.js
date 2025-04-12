@@ -1,4 +1,5 @@
 // Event Tracker for GitHub.io Page
+
 (function() {
     // Initialize tracking on page load
     document.addEventListener('DOMContentLoaded', function() {
