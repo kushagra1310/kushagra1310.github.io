@@ -1,0 +1,208 @@
+/* Text Analyzer Styling - Unified with main site theme */
+
+.analyzer-container {
+    max-width: 900px;
+    margin: 30px auto 60px;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.analyzer-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.analyzer-header h2 {
+    font-size: 2rem;
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+    font-family: var(--font-secondary);
+}
+
+.analyzer-header p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.analyzer-input-container {
+    margin-bottom: 2.5rem;
+}
+
+#text-input {
+    width: 100%;
+    min-height: 220px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+#text-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(170, 252, 37, 0.2);
+}
+
+#analyze-btn {
+    display: block;
+    margin: 1.5rem auto;
+    padding: 0.75rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--darker-bg);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#analyze-btn:hover {
+    background-color: #befc5f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(170, 252, 37, 0.25);
+}
+
+#analyze-btn:active {
+    transform: translateY(0);
+}
+
+.results-container {
+    background-color: var(--dark-bg);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.results-container h3 {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.results-container h4 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin: 1.5rem 0 1rem;
+}
+
+.results-container ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.results-container li {
+    padding: 0.6rem 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-light);
+}
+
+.results-container li span.count {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.stats-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stats-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.stats-section p {
+    margin: 1rem 0 0.5rem;
+    color: var(--text-muted);
+}
+.logo {
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(170, 252, 37, 0.3);
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .analyzer-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .analyzer-header h2 {
+        font-size: 1.6rem;
+    }
+
+    #analyze-btn {
+        width: 100%;
+    }
+}
+footer {
+    background-color: var(--darker-bg);
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icon:hover {
+    background-color: var(--primary-color);
+    color: var(--darker-bg);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}

@@ -1,0 +1,133 @@
+.timeline {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .timeline-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+    position: relative;
+  }
+  
+  .timeline-item.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .timeline-content {
+    width: calc(50% - 4rem);
+    padding: 2rem;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+  }
+  
+  .timeline-content h3 {
+    color: var(--primary-color);
+    font-family: var(--font-secondary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .timeline-content p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .timeline-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .timeline-content a:hover {
+    text-decoration: underline;
+  }
+  
+  .timeline-date {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background-color: var(--primary-color);
+    color: #000;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  
+  .timeline-img {
+    width: calc(50% - 4rem);
+    display: flex;
+    align-items: center;
+  }
+  
+  .timeline-img img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .timeline-img img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 2rem;
+    }
+    
+    .timeline-item,
+    .timeline-item.reverse {
+      flex-direction: column;
+      margin-bottom: 3rem;
+    }
+    
+    .timeline-content,
+    .timeline-img {
+      width: 100%;
+    }
+    
+    .timeline-content {
+      margin-bottom: 1.5rem;
+    }
+    
+    .timeline-item::after {
+      left: 2rem;
+    }
+  }

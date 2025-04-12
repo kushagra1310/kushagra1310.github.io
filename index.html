@@ -1,7 +1,100 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title> hi </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kushagra Agrawal | Portfolio</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="personalstyle.css">
 </head>
 <body>
-start
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">KA</div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="skillsandcv.html">Skills and CV</a></li>
+        <li><a href="text-analyzer.html">Text Analyzer tool</a></li>
+      </ul>
+      <div class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Hello, I'm <span>Kushagra Agrawal</span></h1>
+        <div class="typewriter-container">
+          <p id="intro-para" class="intro-text"></p>
+          <span class="cursor">|</span>
+        </div>
+        <div class="cta-buttons">
+          <a href="skillsandcv.html" class="btn primary-btn">View My CV</a>
+          <a href="#contact" class="btn secondary-btn">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="profile-image-placeholder">
+          <!-- <i class="fa-solid fa-user"></i> -->
+          <img src="images/profile.jpeg" alt="Profile Photo of Kushagra Agrawal" class="profile-photo">
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <h2 class="section-title">About <span>Me</span></h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>I'm a fresher at the International Institute of Information Technology, Hyderabad, originally from Nashik, Maharashtra. My academic journey is just beginning, and I'm excited to explore the vast world of technology and information science.</p>
+          <p>When I'm not coding or studying, you can find me playing music on my keyboard or guitar. I'm also an avid football fan and enjoy staying updated with the latest matches and player statistics.</p>
+        </div>
+        <div class="interests">
+          <h3>My Interests</h3>
+          <div class="interest-items">
+            <div class="interest-item">
+              <i class="fa-solid fa-code"></i>
+              <span>Programming</span>
+            </div>
+            <div class="interest-item">
+              <i class="fa-solid fa-music"></i>
+              <span>Music</span>
+            </div>
+            <div class="interest-item">
+              <i class="fa-solid fa-futbol"></i>
+              <span>Football</span>
+            </div>
+            <div class="interest-item">
+              <i class="fa-solid fa-lightbulb"></i>
+              <span>Problem Solving</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-content">
+      <h3>Contact</h3>
+      <div class="social-links">
+        <a href="https://github.com/kushagra1310" class="social-icon"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/kushagra-agrawal-735a89312/" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="kushagraagrawalashoka@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <p class="copyright">© 2025 Kushagra Agrawal. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="eventTracker.js"></script> <!-- for question 2-->
 </body>
+</html>

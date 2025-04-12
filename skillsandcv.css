@@ -1,0 +1,202 @@
+/* Animation Classes */
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.animate-slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 0.8s ease forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Layout */
+.main-layout {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Skills Section */
+.skills-section {
+    width: 100%;
+    padding: 4rem 0;
+}
+
+.skills-container {
+    flex: 1;
+    padding-right: 3rem;
+}
+
+.skills-category {
+    margin-bottom: 5rem;
+}
+
+.skills-category h2 {
+    color: var(--primary-color);
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2.5rem;
+}
+
+.skill-item {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 2.5rem;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.skill-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* CV Section */
+.cv-section {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 3rem;
+}
+
+.cv-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 100px;
+}
+
+.cv-icon-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.document-icon {
+    width: 160px;
+    height: 200px;
+    background: rgba(170, 252, 37, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    padding: 12px;
+}
+
+.cv-icon-link:hover .document-icon {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(170, 252, 37, 0.3);
+    background: rgba(170, 252, 37, 0.15);
+}
+
+.download-hint {
+    display: block;
+    margin-top: 16px;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.cv-icon-link:hover .download-hint {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.cv-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.cv-info {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin: 4px 0;
+    opacity: 0.7;
+}
+
+/* Pulse animation for the logo */
+@keyframes gentlePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.document-icon {
+    animation: gentlePulse 3s infinite;
+}
+
+.cv-icon-link:hover .document-icon {
+    animation: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .main-layout {
+        flex-direction: column;
+    }
+    
+    .skills-container {
+        padding-right: 0;
+    }
+    
+    .cv-section {
+        width: 100%;
+        margin-top: 2rem;
+    }
+    
+    .cv-display {
+        padding: 2rem;
+        position: relative;
+        top: 0;
+        margin-bottom: 3rem;
+    }
+}
