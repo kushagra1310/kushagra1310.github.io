@@ -35,7 +35,7 @@ function analyzeText() {
     // Check if text has enough words
     const wordCount = countWords(textInput);
     if (wordCount <= 10000) {
-        alert(`Please enter at least 10000 words. Current count: ${wordCount}`);
+        alert(`Please enter more than 10000 words. Current count: ${wordCount}`);
         return;
     }
     
