@@ -5,13 +5,15 @@
 }
 
 .intro-text {
+  width: 100%;
   max-width: 800px;
   margin: 0 auto 4rem;
-  text-align: center;
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  line-height: 1.7;
   padding: 0 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  display: block;
 }
 
 .masonry-grid {
