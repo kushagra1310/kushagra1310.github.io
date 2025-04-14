@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Typewriter effect
     const text = `I'm a fresher at the International Institute of Information Technology, Hyderabad, originally from Nashik, Maharashtra. My passions include playing musical instruments like the keyboard and guitar, following football, and continuously learning new things. I particularly enjoy problem-solving and finding optimized, elegant solutions to complex challenges.`;
 
     const typedText = document.getElementById("typed-text");
@@ -30,8 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setTimeout(typeWriter, 800);
 
-    // ====== Rest of your existing code ======
-    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -42,14 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Adjust for navbar
+                    top: targetElement.offsetTop - 80, 
                     behavior: 'smooth'
                 });
             }
         });
     });
 
-    // Add active class to nav links based on scroll position
     window.addEventListener('scroll', function () {
         const sections = document.querySelectorAll('section');
         const scrollPosition = window.scrollY;

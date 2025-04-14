@@ -118,7 +118,7 @@ body {
     height: 100%;
     object-fit: cover;
   }
-/* Button Styles */
+
 .cta-buttons {
     display: flex;
     gap: 1rem;

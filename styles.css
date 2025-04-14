@@ -135,9 +135,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-/* .intro-text{
-  text-align: center;
-} */
+
 .section-title {
   font-family: var(--font-secondary);
   font-size: clamp(2rem, 5vw, 3rem);
