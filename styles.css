@@ -212,3 +212,18 @@ footer {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
+.navbar {
+  white-space: nowrap; 
+  overflow-x: auto;   
+  -webkit-overflow-scrolling: touch; 
+  max-width: 100%; 
+}
+
+.navbar::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+}
