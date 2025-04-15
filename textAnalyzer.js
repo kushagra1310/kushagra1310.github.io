@@ -1,80 +1,47 @@
-// Text Analysis Tool - Integrated with your website
+//question 3
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize event listeners
     const analyzeBtn = document.getElementById('analyze-btn');
     if (analyzeBtn) {
         analyzeBtn.addEventListener('click', analyzeText);
     }
-    
-    // Check for URL parameters - useful if someone wants to share analysis
-    checkUrlParams();
 });
 
-// Function to check URL parameters
-function checkUrlParams() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const sampleText = urlParams.get('sample');
-    
-    if (sampleText === 'demo') {
-        // Load a demo text for first-time users
-        fetch('assets/demo-text.txt')
-            .then(response => response.text())
-            .then(text => {
-                document.getElementById('text-input').value = text;
-            })
-            .catch(error => {
-                console.error('Error loading demo text:', error);
-            });
-    }
-}
-
-// Main function to analyze the text
-function analyzeText() {
+function analyzeText()
+{
     const textInput = document.getElementById('text-input').value;
-    
-    // Check if text has enough words
     const wordCount = countWords(textInput);
     if (wordCount <= 10000) {
         alert(`Please enter more than 10000 words. Current count: ${wordCount}`);
         return;
     }
-    
-    // Show loading state
     showLoading();
     
-    // Use setTimeout to allow UI to update before heavy processing
     setTimeout(() => {
-        // Perform analysis
         analyzeCharacters(textInput);
         analyzePronouns(textInput);
         analyzePrepositions(textInput);
         analyzeArticles(textInput);
         
-        // Hide loading state
         hideLoading();
         
-        // Scroll to results
         document.querySelector('.results-container').scrollIntoView({ 
             behavior: 'smooth' 
         });
     }, 100);
 }
 
-// Show loading state
 function showLoading() {
     const analyzeBtn = document.getElementById('analyze-btn');
     analyzeBtn.disabled = true;
     analyzeBtn.textContent = 'Analyzing...';
     analyzeBtn.style.opacity = '0.7';
     
-    // Clear previous results
     document.getElementById('character-stats').innerHTML = '<div class="loading">Processing...</div>';
     document.getElementById('pronouns-stats').innerHTML = '';
     document.getElementById('prepositions-stats').innerHTML = '';
     document.getElementById('articles-stats').innerHTML = '';
 }
 
-// Hide loading state
 function hideLoading() {
     const analyzeBtn = document.getElementById('analyze-btn');
     analyzeBtn.disabled = false;
@@ -82,12 +49,10 @@ function hideLoading() {
     analyzeBtn.style.opacity = '1';
 }
 
-// Function to count words
 function countWords(text) {
     return text.trim().split(/\s+/).length;
 }
 
-// Function to analyze characters, words, spaces, newlines, and special symbols
 function analyzeCharacters(text) {
     const charCount = text.length;
     const letterCount = (text.match(/[a-zA-Z]/g) || []).length;
@@ -118,7 +83,6 @@ function analyzeCharacters(text) {
     });
 }
 
-// Function to analyze pronouns
 function analyzePronouns(text) {
     const pronouns = {
         personal: ['i', 'me', 'my', 'mine', 'myself', 'you', 'your', 'yours', 'yourself', 
@@ -134,10 +98,8 @@ function analyzePronouns(text) {
                     'several', 'all', 'any', 'most', 'some']
     };
     
-    // Convert to lowercase and tokenize
     const tokens = text.toLowerCase().match(/\b\w+\b/g) || [];
     
-    // Count pronouns by category
     const pronounCounts = {};
     let totalCount = 0;
     
@@ -153,7 +115,6 @@ function analyzePronouns(text) {
         }
     }
     
-    // Display results
     let html = `<h4>Pronoun Analysis (Total: ${totalCount.toLocaleString()})</h4>`;
     
     for (const category in pronounCounts) {
@@ -174,7 +135,6 @@ function analyzePronouns(text) {
     document.getElementById('pronouns-stats').innerHTML = html;
 }
 
-// Function to analyze prepositions
 function analyzePrepositions(text) {
     const prepositions = [
         'about', 'above', 'across', 'after', 'against', 'along', 'amid', 'among', 
@@ -186,10 +146,8 @@ function analyzePrepositions(text) {
         'unto', 'up', 'upon', 'with', 'within', 'without'
     ];
     
-    // Convert to lowercase and tokenize
     const tokens = text.toLowerCase().match(/\b\w+\b/g) || [];
     
-    // Count prepositions
     const prepositionCounts = {};
     let totalCount = 0;
     
@@ -201,11 +159,9 @@ function analyzePrepositions(text) {
         }
     });
     
-    // Sort by frequency (highest first)
     const sortedPrepositions = Object.entries(prepositionCounts)
         .sort((a, b) => b[1] - a[1]);
     
-    // Display results
     let html = `<h4>Preposition Analysis (Total: ${totalCount.toLocaleString()})</h4><ul>`;
     
     sortedPrepositions.forEach(([prep, count]) => {
@@ -216,16 +172,13 @@ function analyzePrepositions(text) {
     document.getElementById('prepositions-stats').innerHTML = html;
 }
 
-// Function to analyze articles
 function analyzeArticles(text) {
     const indefiniteArticles = ['a', 'an'];
     const definiteArticles = ['the'];
     const allArticles = [...indefiniteArticles, ...definiteArticles];
     
-    // Convert to lowercase and tokenize
     const tokens = text.toLowerCase().match(/\b\w+\b/g) || [];
     
-    // Count articles
     const articleCounts = {};
     const articleTypes = {
         indefinite: 0,
@@ -245,7 +198,6 @@ function analyzeArticles(text) {
         }
     });
     
-    // Display results
     const totalIndefinite = articleTypes.indefinite;
     const totalDefinite = articleTypes.definite;
     const totalCount = totalIndefinite + totalDefinite;
@@ -280,13 +232,12 @@ function analyzeArticles(text) {
     document.getElementById('articles-stats').innerHTML = html;
 }
 
-// Helper function to capitalize first letter
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-// Add at the bottom of the file
+
 document.addEventListener("DOMContentLoaded", function() {
-    // Animation observer for text analyzer elements
+
     const analyzerElements = [
         document.querySelector('.analyzer-container'),
         document.querySelector('.analyzer-header'),
@@ -310,7 +261,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (element) observer.observe(element);
     });
 
-    // Animate results when they appear
     const resultsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -320,7 +270,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }, { threshold: 0.1 });
 
-    // Observe dynamic results
     document.querySelectorAll('.stats-section').forEach(section => {
         resultsObserver.observe(section);
     });
