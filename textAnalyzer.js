@@ -57,7 +57,7 @@ function analyzeCharacters(text) {
     const charCount = text.length;
     const letterCount = (text.match(/[a-zA-Z]/g) || []).length;
     const wordCount = countWords(text);
-    const spaceCount = (text.match(/\s/g) || []).length;
+    const spaceCount = (text.match(/ /g) || []).length;
     const newlineCount = (text.match(/\n/g) || []).length;
     const specialSymbolCount = (text.match(/[^\w\s]/g) || []).length;
     
